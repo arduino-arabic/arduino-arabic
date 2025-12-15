@@ -1,0 +1,141 @@
+.main {
+  padding: 3rem 1rem;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  animation: fadeUp 0.8s ease forwards;
+  align-items: center;
+}
+
+.heroText {
+  max-width: 520px;
+}
+
+.heroText h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #00979d;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.heroText p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  background: #00979d;
+  color: white;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px; /* Arduino buttons are rounded */
+  font-weight: 600;
+}
+
+.primaryBtn:hover {
+  background: #007f84;
+}
+
+.secondaryBtn {
+  border: 2px solid #00979d;
+  color: #00979d;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.secondaryBtn:hover {
+  background: rgba(0, 151, 157, 0.08);
+}
+
+/* Image */
+.heroImage {
+  display: flex;
+  justify-content: center;
+  max-width: 420px;
+}
+.heroImage img {
+  transform: translateY(-10px);
+}
+.heroImg {
+  width: 260px;
+  max-width: 100%;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  animation: fadeUp 1.1s ease forwards;
+
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.card svg {
+  color: #00979d;
+}
+
+.card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.card:hover {
+  border-color: #00979d;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode */
+[data-theme='dark'] .heroText p,
+[data-theme='dark'] .card p {
+  color: #d1d5db;
+}
+
+[data-theme='dark'] .card {
+   background: #020617;
+  border-color: #1e293b;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
