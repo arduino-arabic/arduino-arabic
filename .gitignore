@@ -1,7 +1,13 @@
-node_modules
+# Docusaurus
+.docusaurus
 build
+
+# Node
+node_modules
+npm-debug.log*
+
+# Env / Editor
 .env
-.DS_Store
 .vscode
 .idea
-npm-debug.log*
+.DS_Store
