@@ -1,41 +1,37 @@
-# Website
+# Arduino Arabic 🇸🇦🔌
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+منصة تعليمية عربية لتعلّم **الأردوينو** من الصفر حتى الاحتراف  
+بأسلوب بسيط، عملي، ومناسب للمبتدئين.
 
-## Installation
+---
 
-```bash
-yarn
-```
+## 🎯 هدف المشروع
+توفير محتوى عربي عالي الجودة لتعلّم:
+- أساسيات الأردوينو
+- البرمجة باستخدام Arduino IDE
+- التعامل مع الحساسات والمشغلات
+- تنفيذ مشاريع عملية
 
-## Local Development
+---
 
-```bash
-yarn start
-```
+## 🌐 الموقع
+https://arduino-arabic.github.io/arduino-arabic/
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+---
 
-## Build
+## 🧰 التقنيات المستخدمة
+- Docusaurus
+- Markdown
+- Arduino (C/C++)
+- GitHub Pages
 
-```bash
-yarn build
-```
+---
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## 🤝 المساهمة
+المساهمات مرحّب بها ❤️  
+يرجى فتح Issue أو Pull Request.
 
-## Deployment
+---
 
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 📄 الرخصة
+Creative Commons BY-NC-SA 4.0
