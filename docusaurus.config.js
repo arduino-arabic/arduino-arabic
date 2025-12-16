@@ -14,7 +14,7 @@ const config = {
   title: 'منصة أردوينو بالعربي',
   tagline: 'تعلم الإلكترونيات والبرمجة من الصفر وحتى الاحتراف',
   url: 'https://arduino-arabic.github.io', // رابط موقعك (عدله عند الرفع)
-  baseUrl: '/',
+  baseUrl: '/arduino-arabic/',
   
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
