@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkarduino_arabic=globalThis.webpackChunkarduino_arabic||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/arduino-arabic/blog","blogTitle":"Blog","authorsListPath":"/arduino-arabic/blog/authors"}')}}]);
