@@ -1,59 +1,49 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
-// 1️⃣ استدعاء مكتبة الثيمات بالطريقة الصحيحة (لتجنب أخطاء التثبيت)
 const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  // =======================================================
-  // 💡 إعدادات الموقع الأساسية
-  // =======================================================
+  // 1. إعدادات الموقع الأساسية
   title: 'منصة أردوينو بالعربي',
-  tagline: 'تعلم الإلكترونيات والبرمجة من الصفر وحتى الاحتراف',
-  url: 'https://arduino-arabic.github.io', // رابط موقعك (عدله عند الرفع)
-  baseUrl: '/arduino-arabic/',
+  tagline: 'تعلم الإلكترونيات والبرمجة من الصفر',
+  url: 'https://arduino-arabic.github.io', 
+  baseUrl: '/arduino-arabic/', 
   
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
-  // إعدادات النشر على GitHub Pages
   organizationName: 'arduino-arabic', 
   projectName: 'arduino-arabic', 
   deploymentBranch: 'gh-pages',
 
-  // =======================================================
-  // 💡 إعدادات اللغة (تعريب الموقع)
-  // =======================================================
+  // 2. إعدادات اللغة
   i18n: {
     defaultLocale: 'ar',
     locales: ['ar'],
     localeConfigs: {
       ar: {
         label: 'العربية',
-        direction: 'rtl', // اتجاه المحتوى العام (يمين-يسار)
+        direction: 'rtl',
         htmlLang: 'ar-EG',
       },
     },
   },
 
-  // استدعاء الخط العربي (Tajawal) من Google Fonts
+  // استدعاء الخط العربي
   headTags: [
     {
       tagName: 'link',
       attributes: {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@400;500;700&display=swap',
       },
     },
   ],
 
-  // =======================================================
-  // 💡 الإعدادات المسبقة (Presets)
-  // =======================================================
+  // 3. الإعدادات المسبقة (Presets)
   presets: [
     [
       'classic',
@@ -61,108 +51,76 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // رابط تعديل الصفحات (يمكنك تغييره لرابط المستودع الخاص بك)
-          editUrl: 'https://github.com/arduino-arabic/arduino-arabic/tree/main/',
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
+          // ❌ تم إخفاء زر التعديل
+          // editUrl: '...', 
+          
+          // ❌ تم إخفاء آخر تحديث واسم المؤلف
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/arduino-arabic/arduino-arabic/tree/main/',
-        },
+        blog: false, // ❌ تم تعطيل المدونة بالكامل
         theme: {
-          customCss: require.resolve('./src/css/custom.css'), // استدعاء ملف CSS المعدل
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
   ],
 
-  // =======================================================
-  // 💡 إعدادات المظهر (Theme Config)
-  // =======================================================
+  // 4. إعدادات المظهر (Theme Config)
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // صورة المعاينة عند مشاركة الرابط على السوشيال ميديا
       image: 'img/docusaurus-social-card.jpg',
       
+      // إعدادات الشريط العلوي (Navbar)
       navbar: {
         title: 'أردوينو بالعربي',
         logo: {
           alt: 'Arduino Logo',
-          src: 'img/logo.svg', // تأكد من وجود الشعار في مجلد static/img
+          src: 'img/logo.svg',
         },
-        // العناصر في الشريط العلوي
-        // ملاحظة: الـ CSS يجبر الشريط على اتجاه LTR (شعار يسار)
         items: [
+          // 👇 الرابط الوحيد المتبقي: الدروس
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'left', // سيظهر بجانب الشعار (في اليسار)
+            position: 'left',
             label: '📚 الدروس',
           },
-          {
-            to: '/blog', 
-            label: '📰 المدونة', 
-            position: 'left' // سيظهر بجانب الدروس
-          },
-          {
-            href: 'https://github.com/arduino-arabic/arduino-arabic',
-            label: 'GitHub',
-            position: 'right', // سيظهر في أقصى اليمين
-          },
+          // تم حذف GitHub و Blog
         ],
       },
       
+      // إعدادات ذيل الصفحة (Footer)
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'المحتوى',
+            title: 'تصفح',
             items: [
               {
-                label: 'ابدأ التعلم',
+                label: 'ابدأ التعلم من هنا',
                 to: '/docs/intro',
-              },
-              {
-                label: 'المدونة',
-                to: '/blog',
               },
             ],
           },
           {
-            title: 'المجتمع',
+            title: 'تواصل معنا',
             items: [
               {
                 label: 'Facebook Group',
                 href: 'https://facebook.com',
               },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/',
-              },
-            ],
-          },
-          {
-            title: 'المزيد',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/arduino-arabic/arduino-arabic',
-              },
             ],
           },
         ],
-        copyright: `حقوق النشر © ${new Date().getFullYear()} منصة أردوينو بالعربي. تم البناء بواسطة Docusaurus.`,
+        copyright: `حقوق النشر © ${new Date().getFullYear()} منصة أردوينو بالعربي.`,
       },
       
       prism: {
-        // الثيمات التي قمنا باستيرادها في الأعلى
-        theme: lightCodeTheme, // ثيم GitHub الفاتح
-        darkTheme: darkCodeTheme, // ثيم Dracula الداكن
-        
-        // اللغات الإضافية التي نحتاج تلوينها في الأكواد
-        additionalLanguages: ['cpp', 'arduino'], 
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+        additionalLanguages: ['cpp', 'arduino'],
       },
     }),
 };
