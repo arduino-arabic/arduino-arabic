@@ -1,78 +1,51 @@
-import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import styles from './index.module.css';
-import {
-  BookOpen,
-  Cpu,
-  Activity,
-  Rocket,
-} from 'lucide-react';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
+import styles from './index.module.css';
+
+// مكون رأس الصفحة (Hero Header)
+function HomepageHeader() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        {/* عنوان الموقع الرئيسي */}
+        <h1 className="hero__title" style={{ fontFamily: 'Tajawal, sans-serif' }}>
+          {siteConfig.title}
+        </h1>
+        
+        {/* الوصف المختصر */}
+        <p className="hero__subtitle" style={{ fontFamily: 'Tajawal, sans-serif' }}>
+          {siteConfig.tagline}
+        </p>
+        
+        {/* أزرار الدعوة لاتخاذ إجراء (CTA) */}
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/intro">
+            🚀 ابدأ رحلة التعلم من هنا - مجاناً
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+// المكون الرئيسي للصفحة
 export default function Home() {
+  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="تعلم الأردوينو بالعربي"
-      description="منصة عربية لتعلم الأردوينو من الصفر حتى الاحتراف"
-    >
-      <main className={styles.main}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <div className={styles.heroText}>
-            <h1>تعلم الأردوينو بالعربي</h1>
-            <p>
-              منصة تعليمية عربية لتعلم الإلكترونيات والبرمجة باستخدام
-              الأردوينو خطوة بخطوة مع أمثلة ومشاريع عملية.
-            </p>
-
-            <div className={styles.buttons}>
-              <a className={styles.primaryBtn} href="/docs/intro">
-                ابدأ التعلم
-              </a>
-              <a className={styles.secondaryBtn} href="/docs">
-                تصفح المحتوى
-              </a>
-            </div>
-          </div>
-
-          <div className={styles.heroImage}>
-            <img
-              src="/img/arduino.png"
-              alt="Arduino Board"
-              className={styles.heroImg}
-            />
-          </div>
-        </section>
-
-        {/* Cards */}
-        <section className={styles.cards}>
-          <a href="/docs/intro" className={styles.card}>
-            <BookOpen size={34} />
-            <h3>ابدأ هنا</h3>
-            <p>تعرف على الأردوينو والأدوات الأساسية.</p>
-            <span>⏱️ 10 دقائق</span>
-          </a>
-
-          <a href="/docs" className={styles.card}>
-            <Cpu size={34} />
-            <h3>المداخل والمخارج</h3>
-            <p>تعلم Digital و Analog و PWM.</p>
-            <span>⏱️ 20 دقيقة</span>
-          </a>
-
-          <a href="/docs" className={styles.card}>
-            <Activity size={34} />
-            <h3>الحساسات</h3>
-            <p>الحرارة، الحركة، والموجات فوق الصوتية.</p>
-            <span>⏱️ 15 دقيقة</span>
-          </a>
-
-          <a href="/docs" className={styles.card}>
-            <Rocket size={34} />
-            <h3>المشاريع</h3>
-            <p>طبّق ما تعلمته في مشاريع حقيقية.</p>
-            <span>⏱️ 30 دقيقة</span>
-          </a>
-        </section>
+      title={`الرئيسية | ${siteConfig.title}`}
+      description="منصة عربية مفتوحة المصدر لتعلم الأردوينو والإلكترونيات <head />">
+      <HomepageHeader />
+      <main>
+        {/* استدعاء ميزات الموقع (الأعمدة الثلاثة) */}
+        <HomepageFeatures />
       </main>
     </Layout>
   );

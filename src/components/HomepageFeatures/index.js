@@ -1,45 +1,48 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+// 1. استيراد الأيقونات من مكتبة Lucide-React
+import { BookOpen, CircuitBoard, Users } from 'lucide-react'; 
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    // 2. تحديث العنوان والوصف باللغة العربية
+    title: 'تعلم الأردوينو بالعربي',
+    // 3. استبدال Svg بمكون Icon
+    Icon: BookOpen, 
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        نوفر شروحات كاملة ومبسطة باللغة العربية الفصحى، بدءاً من الأساسيات في البرمجة والإلكترونيات وصولاً إلى الاحتراف.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'مشاريع عملية متقدمة',
+    Icon: CircuitBoard, 
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        ركز على التطبيق العملي. كل درس مصحوب بمشاريع حقيقية يمكنك تنفيذها لتثبيت المعلومة واكتساب الخبرة العملية.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'مجتمع نشط وداعم',
+    Icon: Users, 
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        انضم لمجتمعنا لمشاركة الأسئلة، طلب الدعم التقني، وتبادل الخبرات مع مبرمجين ومهندسين عرب مهتمين بمجال المتحكمات الدقيقة.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+// 4. تعديل دالة Feature لتقبل Icon بدلاً من Svg
+function Feature({Icon, title, description}) { 
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {/* 5. استخدام مكون الأيقونة المُستورد */}
+        <Icon className={styles.featureSvg} role="img" size={64} /> 
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

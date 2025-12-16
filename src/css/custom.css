@@ -1,15 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+/*
+===================================================
+ملف: src/css/custom.css
+الهدف: تصميم هوية أردوينو الرسمية + إصلاح اتجاه الأكواد
+===================================================
+*/
 
+/* ------------------------------------------------ */
+/* 1. تعريف متغيرات ألوان أردوينو الرسمية */
+/* ------------------------------------------------ */
 :root {
-  --ifm-font-family-base: 'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* الألوان الأساسية */
+  --arduino-teal: #00979C;       /* اللون الرئيسي (Teal) */
+  --arduino-teal-dark: #008185;  /* درجة أغمق للتحويم */
+  --arduino-orange: #E47E31;     /* اللون الثانوي (للتنبيهات) */
+  --arduino-dark-grey: #4E5B61;  /* لون النصوص */
+  --arduino-light-grey: #95A5A6; /* لون النصوص الثانوية */
+  --arduino-bg-light: #F4F5F6;   /* خلفيات خفيفة */
+
+  /* تجاوز متغيرات Docusaurus لفرض الألوان الرئيسية */
+  --ifm-color-primary: var(--arduino-teal);
+  --ifm-color-primary-dark: #00888c;
+  --ifm-color-primary-darker: #008085;
+  --ifm-color-primary-darkest: #006a6e;
+  --ifm-color-primary-light: #00a6ac;
+  --ifm-color-primary-lighter: #00adb3;
+  --ifm-color-primary-lightest: #00c1c8;
+
+  /* إعدادات الخط العربي */
+  font-family: 'Tajawal', sans-serif;
 }
 
-/* تحسين القراءة */
-body {
-  font-weight: 400;
-  line-height: 1.8;
+/* ------------------------------------------------ */
+/* 2. شريط التنقل (Navbar) - نمط LTR */
+/* ------------------------------------------------ */
+.navbar {
+    direction: ltr !important; /* الشعار يسار، الروابط يمين */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
 }
-h1, h2, h3, h4 {
-  font-weight: 600;
-  letter-spacing: -0.3px;
+
+.navbar__item {
+    font-weight: 600;
+    color: var(--arduino-dark-grey);
+    padding: 0 12px;
+}
+
+.navbar__link:hover, .navbar__link--active {
+    color: var(--arduino-teal);
+}
+
+/* ------------------------------------------------ */
+/* 3. إصلاح اتجاه الأكواد (Code Blocks) - الأهم */
+/* ------------------------------------------------ */
+
+/* إجبار الحاوية والنص على اتجاه اليسار لليمين */
+.theme-code-block, 
+.docusaurus-highlighted-code-container,
+.markdown pre, 
+.markdown code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+/* استخدام خطوط الكود الرسمية */
+code, pre {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  font-size: 14px;
+}
+
+/* تحسين مظهر زر النسخ ليكون في الجهة الصحيحة */
+.clean-btn {
+  direction: ltr;
+}
+
+/* ------------------------------------------------ */
+/* 4. تلوين الكود ليشبه Arduino IDE (Syntax Highlighting) */
+/* ------------------------------------------------ */
+
+/* الكلمات المفتاحية (void, int, if) - لون تركواز */
+.token.keyword {
+  color: #00979C !important;
+  font-weight: bold;
+}
+
+/* الدوال (setup, loop, pinMode) - لون برتقالي */
+.token.function {
+  color: #D35400 !important;
+}
+
+/* الأرقام والعمليات المنطقية */
+.token.number, .token.boolean {
+  color: #8A7B8E !important;
+}
+
+/* النصوص (Strings) */
+.token.string {
+  color: #005C5F !important;
+}
+
+/* التعليقات - رمادي فاتح */
+.token.comment {
+  color: #95a5a6 !important;
+  font-style: italic;
+  /* للحفاظ على عربية التعليقات مقروءة */
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* ------------------------------------------------ */
+/* 5. تنسيق الأزرار (Buttons) */
+/* ------------------------------------------------ */
+.button--primary {
+    background-color: var(--arduino-teal) !important;
+    border-color: var(--arduino-teal) !important;
+    color: #fff;
+}
+
+.button--primary:hover {
+    background-color: var(--arduino-teal-dark) !important;
+    border-color: var(--arduino-teal-dark) !important;
 }
